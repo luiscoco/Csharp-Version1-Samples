@@ -1,0 +1,101 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "HelloWorld",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/HelloWorld/HelloWorld.csproj",
+            "program": "${workspaceFolder}/HelloWorld/bin/Debug/net8.0/HelloWorld.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/HelloWorld",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "preLaunchTask": "build-helloworld"
+        },
+        {
+            "name": "Delegates",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Delegates/Delegates.csproj",
+            "program": "${workspaceFolder}/Delegates/bin/Debug/net8.0/Delegates.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Delegates",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "preLaunchTask": "build-delegates"
+        },
+        {
+            "name": "Interfaces",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Interfaces/Interfaces.csproj",
+            "program": "${workspaceFolder}/Interfaces/bin/Debug/net8.0/Interfaces.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Interfaces",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "preLaunchTask": "build-interfaces"
+        },
+        {
+            "name": "ClassesAndStructs",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/ClassesAndStructs/ClassesAndStructs.csproj",
+            "program": "${workspaceFolder}/ClassesAndStructs/bin/Debug/net8.0/ClassesAndStructs.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/ClassesAndStructs",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "preLaunchTask": "build-classesandstructs"
+        },
+        {
+            "name": "Arrays",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Arrays/Arrays.csproj",
+            "program": "${workspaceFolder}/Arrays/bin/Debug/net8.0/Arrays.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Arrays",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "preLaunchTask": "build-arrays"
+        },
+        {
+            "name": "Events",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Events/Events.csproj",
+            "program": "${workspaceFolder}/Events/bin/Debug/net8.0/Events.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Events",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "preLaunchTask": "build-events"
+        },
+        {
+            "name": "Properties",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Properties/Properties.csproj",
+            "program": "${workspaceFolder}/Properties/bin/Debug/net8.0/Properties.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Properties",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "preLaunchTask": "build-properties"
+        },
+        {
+            "name": "Attributes",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Attributes/Attributes.csproj",
+            "program": "${workspaceFolder}/Attributes/bin/Debug/net8.0/Attributes.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Attributes",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "preLaunchTask": "build-attributes"
+        }
+    ]
+}
