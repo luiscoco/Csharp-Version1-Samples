@@ -100,3 +100,121 @@ Name = Alice, Age = 30
 
 - These are the **foundations of OOP in C#**.
 - Even though modern C# has syntactic sugar (auto-properties, records, string interpolation, etc.), the underlying concepts remain essential.
+
+# C# 1.0 - P03_Structs Example Explanation
+
+This sample demonstrates **structs, classes, boxing/unboxing, and value copy behavior** in **C# 1.0**.
+
+---
+
+## Example Structure
+
+```csharp
+struct Point
+{
+    public int X;
+    public int Y;
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Struct copy by value
+        Point p1 = new Point();
+        p1.X = 5;
+        Point p2 = p1;   // copy by value
+        p2.X = 10;
+
+        Console.WriteLine(p1.X); // 5
+        Console.WriteLine(p2.X); // 10
+
+        // Boxing and unboxing
+        object o = p1;        // BOXING
+        Point q = (Point)o;   // UNBOXING
+        Console.WriteLine(q.X); // 5
+    }
+}
+```
+
+---
+
+## Key Concepts
+
+### 1. Structs
+- Defined with `struct` keyword.
+- Are **value types** (stored on stack or inline).
+- When assigned or passed, they are **copied**.
+
+### 2. Structs vs Classes
+- **Classes** → reference types (heap, accessed by reference).
+- **Structs** → value types (stack, copied on assignment).
+
+Example difference:
+
+```csharp
+Point p1 = new Point { X = 5 };
+Point p2 = p1; // copy
+
+p2.X = 10;
+Console.WriteLine(p1.X); // still 5
+```
+
+With a class, both variables would point to the same instance.
+
+### 3. Boxing & Unboxing
+- **Boxing**: wraps a value type inside an object reference (allocates on heap).
+- **Unboxing**: extracts the value type back from the object.
+
+```csharp
+int n = 42;
+object obj = n;       // BOXING
+int m = (int)obj;     // UNBOXING
+```
+
+For structs:
+
+```csharp
+Point p = new Point { X = 1, Y = 2 };
+object o = p;         // BOXING (copy on heap)
+Point q = (Point)o;   // UNBOXING (copy back)
+```
+
+### 4. Copies by Value
+- Assigning a struct copies its entire data.
+- Passing a struct into a method passes a copy (unless `ref` is used).
+
+```csharp
+void ChangePoint(Point p) { p.X = 99; }
+
+Point p1 = new Point { X = 1 };
+ChangePoint(p1);
+Console.WriteLine(p1.X); // still 1
+```
+
+Using `ref`:
+
+```csharp
+void ChangePoint(ref Point p) { p.X = 99; }
+ChangePoint(ref p1);
+Console.WriteLine(p1.X); // now 99
+```
+
+---
+
+## Output Example
+
+```
+5
+10
+5
+```
+
+---
+
+## Why it Matters
+
+- Shows the **difference between value types and reference types**.
+- Explains **boxing/unboxing**, which impacts **performance** (extra allocations and copies).
+- Demonstrates how structs behave differently from classes in assignment and method calls.
+
