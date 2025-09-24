@@ -45,20 +45,216 @@ No generics, lambdas/anonymous methods, LINQ, `var`, `yield`, nullable value typ
 
 ---
 
-## Tips for Teaching
+# C# 1.0 Mini-Programs — Guided README (P01–P16)
 
-- Have students **extend** one project while staying inside C# 1.0 limits (e.g., add another operator, new event handler, indexer slicing).
-- Point out **value vs reference** semantics (P03), and **contract/programming to interfaces** (P04).
-- Practice **exception hygiene** (P08) and **resource cleanup** (P15).
+This repository demonstrates **C# 1.0 (2002)** features using 16 tiny console projects. It stays inside the C# 1.0 language surface (no generics, lambdas, LINQ, `var`, `yield`, etc.). The goal is to learn/teach the essentials with minimal scaffolding.
 
-## Troubleshooting
+> Tip: In the original repo, projects are named `P01_...` through `P16_...`. See the source for each folder for full code and comments.
 
-- **“Feature ‘namespace alias qualifier’…”**  
-  This solution removes alias qualifiers and the SDK’s `global::` attribute source. If you still see it, clean `bin/obj` and rebuild.
-- **“Assets file … doesn’t have a target for ‘net10.0’”**  
-  Your SDK isn’t 10.x at restore time. Confirm `dotnet --version` is 10.x and no parent `global.json` pins an older SDK.
+
+## Build & Run (suggested flow)
+```bash
+dotnet clean
+dotnet restore
+dotnet build
+dotnet run --project P01_Hello
+```
+Move through the projects in order; each adds one concept.
 
 ---
 
-### License
-Use freely for teaching and demos.
+## P01_Hello — Hello, C# (methods + overloading)
+**Concepts:** Console I/O, methods, overloading, `for` loops, string concatenation.  
+**Mini-sample:**
+```csharp
+static void Print(string s)  { Console.WriteLine(s); }
+static void Print(int n)     { Console.WriteLine(n); }
+static void Main() { for (int i=0;i<3;i++) Print("Hello " + i); }
+```
+
+---
+
+## P02_Classes — Classes, fields, constructors, properties
+**Concepts:** Encapsulation, properties with backing fields (pre auto-props), overriding `ToString()`.
+```csharp
+class Person {
+    private string _name;
+    public string Name { get { return _name; } set { _name = value; } }
+    public Person(string name) { _name = name; }
+    public override string ToString() { return "Person: " + _name; }
+}
+```
+
+---
+
+## P03_Structs — Structs vs classes + boxing
+**Concepts:** Value types, copying semantics, boxing/unboxing to `object`.
+```csharp
+struct Point { public int X, Y; }
+object o = new Point();        // boxing
+Point p = (Point)o;            // unboxing
+```
+
+---
+
+## P04_Interfaces — Interfaces & inheritance
+**Concepts:** `interface`, `virtual`/`override`, polymorphism via interface references.
+```csharp
+interface IShape { double Area(); }
+class Rect : IShape { public int W,H; public double Area(){return W*H;} }
+static void Show(IShape s) { Console.WriteLine(s.Area()); }
+```
+
+---
+
+## P05_Indexers — Custom indexer `this[int]`
+**Concepts:** Arrays + indexers to provide custom access syntax.
+```csharp
+class Names {
+    private string[] _items = new string[3];
+    public string this[int i] { get { return _items[i]; } set { _items[i]=value; } }
+}
+```
+
+---
+
+## P06_Arrays — Arrays, `foreach`, `params`
+**Concepts:** Declaring arrays, iterating with `foreach`, aggregating with `params`.
+```csharp
+static int Sum(params int[] xs){ int t=0; foreach(int x in xs) t+=x; return t; }
+```
+
+---
+
+## P07_Delegates — Delegates & events (pattern)
+**Concepts:** Declaring a delegate, subscribing/unsubscribing, raising an event-like callback.
+```csharp
+public delegate void Notifier(string msg);
+static void Log(string m){ Console.WriteLine(m); }
+static void Main(){ Notifier n = new Notifier(Log); n("Hi!"); }
+```
+
+---
+
+## P08_Exceptions — `try/catch/finally`
+**Concepts:** Exception basics, parsing input, cleanup in `finally`.
+```csharp
+try { int n=int.Parse("xyz"); }
+catch(FormatException ex){ Console.WriteLine(ex.Message); }
+finally { Console.WriteLine("cleanup"); }
+```
+
+---
+
+## P09_Operators — Operator overloading
+**Concepts:** Overloading `+` and formatting with `ToString()`.
+```csharp
+struct Money {
+    public int Cents;
+    public Money(int c){ Cents=c; }
+    public static Money operator +(Money a, Money b){ return new Money(a.Cents+b.Cents); }
+    public override string ToString(){ return (Cents/100.0).ToString("C"); }
+}
+```
+
+---
+
+## P10_Attributes — Attributes + reflection
+**Concepts:** Declaring/using attributes; reading via `System.Reflection`.
+```csharp
+[AttributeUsage(AttributeTargets.Method)]
+class DemoAttribute : Attribute { public string Note; public DemoAttribute(string note){ Note=note; } }
+
+[Demo("HelloAttribute")] static void Foo(){}
+
+foreach(object attr in typeof(Program).GetMethod("Foo").GetCustomAttributes(false))
+    Console.WriteLine(attr);
+```
+
+---
+
+## P11_Namespaces — Namespaces, `using`, access modifiers
+**Concepts:** `namespace`, `using System.IO`, `public`/`internal`/`private`.
+```csharp
+namespace MyLib { public class Util { public static void Say(){ Console.WriteLine("Hi"); } } }
+using MyLib; class Program { static void Main(){ Util.Say(); } }
+```
+
+---
+
+## P12_Enums — Enums, `switch`, bitwise ops
+**Concepts:** `enum`, `[Flags]`, bitwise operations, `switch`.
+```csharp
+[Flags] enum Perm { None=0, Read=1, Write=2, Exec=4 }
+Perm p = Perm.Read | Perm.Write;
+switch(p & Perm.Write){ case Perm.Write: Console.WriteLine("can write"); break; }
+```
+
+---
+
+## P13_ConstReadonly — `const` vs `readonly`, static ctor
+**Concepts:** Compile-time vs run-time constants; static fields/methods; static constructor invocation.
+```csharp
+class C {
+    public const int Size = 10;      // compile-time
+    public static readonly DateTime Started = DateTime.Now; // run-time
+    static C(){ Console.WriteLine("static ctor"); }
+}
+```
+
+---
+
+## P14_Conversions — User-defined conversions & equality
+**Concepts:** `implicit`/`explicit` operators; `==`/`!=`; `Equals`/`GetHashCode`.
+```csharp
+struct Celsius {
+    public double V;
+    public Celsius(double v){ V=v; }
+    public static implicit operator Celsius(double v){ return new Celsius(v); }
+    public static explicit operator double(Celsius c){ return c.V; }
+    public override int GetHashCode(){ return V.GetHashCode(); }
+    public override bool Equals(object o){ return o is Celsius c && c.V==V; }
+}
+```
+
+---
+
+## P15_Dispose — `IDisposable`, `using`, finalizer
+**Concepts:** Classic dispose pattern; `using` statement; finalizer; `GC.SuppressFinalize`.
+```csharp
+class Res : IDisposable {
+    private bool _disposed;
+    public void Dispose(){ if(!_disposed){ _disposed=true; GC.SuppressFinalize(this); } }
+    ~Res(){ /* last-chance cleanup */ }
+}
+static void Main(){ using(Res r=new Res()){ /* work */ } }  // auto Dispose
+```
+
+---
+
+## P16_Preprocessor — Preprocessor + XML docs
+**Concepts:** `#define`, `#if/#else/#endif`, `#warning/#error`, `#region`; XML doc comments.
+```csharp
+#define DEMO
+/// <summary>Greets</summary>
+static void Greet(){ Console.WriteLine("Hi"); }
+#if DEMO
+Greet();
+#else
+#error DEMO symbol missing
+#endif
+```
+
+---
+
+## Why this repo is useful
+- You can **teach or refresh** C# 1.0 fundamentals quickly, concept by concept.
+- Each project is **tiny and focused**, making it ideal for live demos or exercises.
+- Staying inside the C# 1.0 feature set highlights how later features improve ergonomics.
+
+
+## What’s intentionally *not* used
+- No generics, lambdas, LINQ, `var`, `yield`, nullable value types, partial types, expression-bodied members, string interpolation, etc.
+
+
+
