@@ -34,6 +34,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conversions", "Conversions\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indexers", "Indexers\Indexers.csproj", "{7BB6F96D-F2AF-4EDE-8EB9-EEAADF6FA815}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{E430347A-CCAB-4153-BB9A-8097E5E66AF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +106,10 @@ Global
 		{7BB6F96D-F2AF-4EDE-8EB9-EEAADF6FA815}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BB6F96D-F2AF-4EDE-8EB9-EEAADF6FA815}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BB6F96D-F2AF-4EDE-8EB9-EEAADF6FA815}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E430347A-CCAB-4153-BB9A-8097E5E66AF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E430347A-CCAB-4153-BB9A-8097E5E66AF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E430347A-CCAB-4153-BB9A-8097E5E66AF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E430347A-CCAB-4153-BB9A-8097E5E66AF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
