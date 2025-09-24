@@ -57,7 +57,107 @@ class Program
 }
 ```
 
----
+## Example Explanation
+
+### 1. Delegate – the "type" of method
+
+```csharp
+public delegate void NotifyHandler(string message);
+```
+A **delegate** is like a function pointer, but type-safe and object-oriented.
+
+It **defines the signature of methods** that can be attached to the event.
+
+Here, any method that takes a string parameter and returns void can be used.
+
+Think of it as: "I will accept any method that looks like void Something(string msg)."
+
+### 2. Event – publisher side
+
+```
+public event NotifyHandler OnNotify;
+```
+
+**OnNotify** is an event declared inside the Publisher.
+
+**Events** are based on delegates but more restricted:
+
+Only the class that declares the event (Publisher) can trigger (raise) it.
+
+Other classes (Subscriber) can only **subscribe (+=)** or **unsubscribe (-=)**.
+
+This enforces encapsulation: subscribers can’t trigger events themselves.
+
+### 3. Raising the event
+
+```
+private void RaiseEvent(string msg)
+{
+    if (OnNotify != null)   // Check if anyone subscribed
+        OnNotify(msg);      // Invoke the delegate list
+}
+```
+
+**OnNotify** holds a list of subscribed methods (multicast delegate).
+
+Before calling, we check OnNotify != null (otherwise no one is listening).
+
+If there are subscribers, all their methods are executed in order.
+
+This is the publish action of the "publish/subscribe" pattern.
+
+### 4. Subscriber – event handler method
+```
+public void HandleNotification(string msg)
+{
+    Console.WriteLine("Subscriber received: " + msg);
+}
+```
+
+This method matches the delegate signature (void with string).
+
+It’s what gets called when the event is raised.
+
+### 5. Subscribe / Unsubscribe pattern
+
+```
+pub.OnNotify += sub.HandleNotification;   // Subscribe
+pub.DoSomething();                         // Event raised -> subscriber called
+pub.OnNotify -= sub.HandleNotification;   // Unsubscribe
+```
+
++= adds HandleNotification to the event’s invocation list.
+
+When **pub.DoSomething()** is executed:
+
+It raises the event
+
+All subscribed methods (here just one) are invoked.
+
+-= removes the subscription → the subscriber won’t be notified anymore.
+
+This prevents memory leaks or unexpected callbacks when a subscriber is no longer interested.
+
+
+### 6. Big Picture (flow)
+
+Publisher defines a delegate + event.
+
+Subscriber provides a method matching the delegate.
+
+Subscriber subscribes (+=) → event now points to subscriber’s method.
+
+Publisher raises the event → all subscribed methods are invoked.
+
+Subscriber unsubscribes (-=) → removed from invocation list.
+
+### 7. In short:
+
+Delegate = method contract (what kind of methods can be called).
+
+Event = wrapper around delegate that enforces publisher/subscriber rules.
+
+Subscribe (+=) / Unsubscribe (-=) = add/remove handlers from event invocation list.
 
 ## Key Concepts
 
