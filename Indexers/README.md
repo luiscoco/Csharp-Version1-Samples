@@ -4,7 +4,74 @@ This sample (from the repo **Csharp-Version1-Samples**) demonstrates **indexers,
 
 ---
 
-## Example Code
+This sample demonstrates:
+
+Indexers (this[...]) → allow objects to be indexed like arrays.
+
+Arrays → storing collections of items.
+
+ToString() composition → building a string representation that uses the indexer/array data.
+
+## 1. What’s an Indexer?
+
+An indexer lets an object be accessed using array-like syntax.
+
+Instead of:
+
+```
+myCollection.GetItem(0);
+```
+
+you can write:
+
+```
+myCollection[0];
+```
+
+The keyword is this[...].
+
+Example:
+
+```
+public class MyCollection
+{
+    private string[] data = new string[3];
+
+    // Indexer
+    public string this[int index]
+    {
+        get { return data[index]; }
+        set { data[index] = value; }
+    }
+}
+```
+
+Now you can write:
+
+```
+MyCollection c = new MyCollection();
+c[0] = "Hello";
+Console.WriteLine(c[0]); // "Hello"
+```
+
+## 2. Arrays Inside
+
+Typically, the indexer is backed by an array (or list).
+In C# 1.0, the natural choice was a fixed array.
+
+## 3. ToString() Composition
+
+Often, the class overrides ToString() to produce a readable summary of its data.
+For example, concatenating all items in the array:
+
+```
+public override string ToString()
+{
+    return string.Join(", ", data);
+}
+```
+
+## Complete Example Code
 
 ```csharp
 using System;
