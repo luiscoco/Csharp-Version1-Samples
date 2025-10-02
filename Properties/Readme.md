@@ -6,9 +6,9 @@
 
 In the Person class, we have a private field:
 
-´´´csharp
+'''csharp
 private string name;
-´´´
+'''
 
 This field stores the person’s name, but because it’s marked private, it cannot be accessed directly from outside the class.
 
