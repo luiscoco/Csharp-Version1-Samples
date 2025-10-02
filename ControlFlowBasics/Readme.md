@@ -25,12 +25,15 @@ else runs when none of the above are true.
 
 So here, since number = 10, the output is:
 
+```
 Number is 10
+```
 
 ## 2. Switch Statement
 
 Next, we see a switch:
 
+```csharp
 switch (day)
 {
     case 1: Console.WriteLine("Monday"); break;
@@ -38,7 +41,7 @@ switch (day)
     case 3: Console.WriteLine("Wednesday"); break;
     default: Console.WriteLine("Another day"); break;
 }
-
+```
 
 The value of day is compared against each case.
 
@@ -52,13 +55,14 @@ Wednesday
 
 ## 3. While Loop
 
+```csharp
 int i = 0;
 while (i < 3)
 {
     Console.WriteLine($"While loop iteration: {i}");
     i++;
 }
-
+```
 
 A while loop checks the condition first, then runs the body.
 
@@ -66,13 +70,14 @@ This prints iterations for 0, 1, 2.
 
 ## 4. Do–While Loop
 
+```csharp
 int j = 0;
 do
 {
     Console.WriteLine($"Do-while loop iteration: {j}");
     j++;
 } while (j < 3);
-
+```
 
 A do–while loop always runs at least once, because the condition is checked at the end.
 
@@ -80,11 +85,12 @@ It prints iterations for 0, 1, 2.
 
 ## 5. For Loop
 
+```csharp
 for (int k = 0; k < 3; k++)
 {
     Console.WriteLine($"For loop iteration: {k}");
 }
-
+```
 
 A for loop is compact: it has initialization (int k = 0), condition (k < 3), and increment (k++) in one line.
 
@@ -92,12 +98,13 @@ Runs for 0, 1, 2.
 
 ## 6. Foreach Loop
 
+```csharp
 int[] numbers = { 1, 2, 3 };
 foreach (int num in numbers)
 {
     Console.WriteLine($"Foreach loop number: {num}");
 }
-
+```
 
 foreach is used to iterate directly over arrays or collections.
 
@@ -107,13 +114,14 @@ Prints each number: 1, 2, 3.
 
 ## 7. Break and Continue
 
+```csharp
 for (int l = 0; l < 5; l++)
 {
     if (l == 2) continue; // skip iteration
     if (l == 4) break;    // exit loop
     Console.WriteLine(l);
 }
-
+```
 
 continue skips the rest of the loop body for that iteration.
 
@@ -123,13 +131,14 @@ So this prints 0, 1, 3 and stops at 4.
 
 ## 8. Goto Statement
 
+```csharp
 int m = 0;
 MyLabel:
     Console.WriteLine($"Goto loop iteration: {m}");
     m++;
     if (m < 3)
         goto MyLabel;
-
+```
 
 goto jumps directly to a label in the code.
 
