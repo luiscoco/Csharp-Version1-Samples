@@ -195,6 +195,111 @@ Name = Alice, Age = 30
 
 This sample demonstrates **structs, classes, boxing/unboxing, and value copy behavior** in **C# 1.0**.
 
+This sample introduces structs, the difference between structs and classes, boxing and unboxing, and how value types are copied in C#.
+
+## 1. Structs
+
+A struct in C# is defined using the struct keyword.
+
+Unlike classes, structs are value types. That means they are stored directly on the stack (or inline inside other objects).
+
+Key point: when you assign a struct to another variable, you get a copy of the data, not a reference to the same object.
+
+In the example:
+
+'''csharp
+Point p1 = new Point();
+p1.X = 5;
+Point p2 = p1;  // copy
+p2.X = 10;
+'''
+
+Here, p1 and p2 are two independent copies. Changing p2.X does not affect p1.X.
+
+Output:
+
+'''csharp
+p1.X = 5
+p2.X = 10
+'''
+
+## 2. Structs vs Classes
+
+This is the main difference you should remember:
+
+Classes are reference types. When you assign them, both variables point to the same object in memory.
+
+Structs are value types. When you assign them, the data is copied, and the variables work independently.
+
+So:
+
+With a class → both references see the same changes.
+
+With a struct → each variable holds its own copy.
+
+## 3. Boxing and Unboxing
+
+Another important concept introduced in C# 1.0 is boxing and unboxing.
+
+Boxing: when a value type (like a struct or int) is converted into an object. 
+
+This allocates a new copy of the value on the heap and wraps it in an object reference.
+
+Unboxing: when you extract the value type back from the object.
+
+Example from our code:
+
+'''csharp
+object o = p1;      // BOXING (struct copied into an object)
+Point q = (Point)o; // UNBOXING (copy back into a struct)
+'''
+
+Here, q is another independent copy of p1.
+
+Why does this matter? Because boxing and unboxing cause extra memory allocations and copies, which can impact performance in tight loops or heavy calculations.
+
+## 4. Copies by Value
+
+Another consequence of structs being value types is method parameter passing.
+
+By default, if you pass a struct into a method, you pass a copy. Any changes inside the method don’t affect the original.
+
+If you want to modify the original, you must use the ref keyword.
+
+Example:
+
+'''csharp
+void ChangePoint(Point p) { p.X = 99; }  // copy
+ChangePoint(p1);
+Console.WriteLine(p1.X); // still original value
+'''
+
+But with ref:
+
+'''csharp
+void ChangePoint(ref Point p) { p.X = 99; }  
+ChangePoint(ref p1);
+Console.WriteLine(p1.X); // now updated to 99
+'''
+
+## Summary of Key Concepts
+
+Structs → value types, copied on assignment.
+
+Classes → reference types, assigned by reference.
+
+Boxing/Unboxing → value types can be wrapped in objects and later unwrapped, but this creates extra copies.
+
+Value Copy Behavior → assigning or passing structs creates independent copies unless ref is used.
+
+## Why It Matters
+
+This example teaches the fundamental difference between value types and reference types in C#.
+
+It also shows boxing/unboxing, which is important both conceptually and for performance reasons.
+
+Understanding these basics will help you avoid subtle bugs, like accidentally working with copies of structs when you expected shared data, or running into hidden performance costs from boxing.
+
 ---
 
 ## Example Structure
