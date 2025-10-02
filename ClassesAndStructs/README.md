@@ -4,7 +4,7 @@ This sample demonstrates **classes, fields, constructors, properties, encapsulat
 
 This sample demonstrates classes, fields, constructors, properties, encapsulation, and overriding ToString() — all fundamental building blocks of object-oriented programming in C#.
 
- ##1. Classes and Fields
+ ## 1. Classes and Fields
 
 A class is a blueprint for creating objects.
 
