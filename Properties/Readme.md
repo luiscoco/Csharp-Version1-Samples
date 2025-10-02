@@ -6,9 +6,9 @@
 
 In the Person class, we have a private field:
 
-'''csharp
+```csharp
 private string name;
-'''
+```
 
 This field stores the person’s name, but because it’s marked private, it cannot be accessed directly from outside the class.
 
@@ -18,13 +18,13 @@ This is called encapsulation: hiding internal data so it’s not exposed directl
 
 To safely expose the name field, we use a property:
 
-'''csharp
+```csharp
 public string Name
 {
     get { return name; }
     set { name = value; }
 }
-'''
+```
 
 Here:
 
@@ -40,18 +40,18 @@ In C# 1.0, properties had to be written with explicit backing fields. (Later ver
 
 In the Main() method, we create a Person object:
 
-'''csharp
+```csharp
 Person person = new Person();
 person.Name = "Alice";
-'''
+```
 
 Here we’re not directly accessing the private field — we’re using the property’s set accessor.
 
 When we print:
 
-'''csharp
+```csharp
 Console.WriteLine("Person's Name: " + person.Name);
-'''
+```
 
 the runtime calls the property’s get accessor and retrieves the value.
 
