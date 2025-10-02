@@ -2,78 +2,95 @@
 
 This sample demonstrates **classes, fields, constructors, properties, encapsulation, and overriding `ToString()`** in **C# 1.0**.
 
-Now let’s look at another C# 1.0 example, this time focusing on classes, fields, constructors, properties, encapsulation, and overriding ToString().
+This sample demonstrates classes, fields, constructors, properties, encapsulation, and overriding ToString() — all fundamental building blocks of object-oriented programming in C#.
 
-## 1. Classes and Fields
-A class is simply a blueprint for creating objects.
+ ##1. Classes and Fields
 
-In this case, our class is Person. It defines what a person object will look like.
+A class is a blueprint for creating objects.
 
-Inside the class, we have two fields: name and age.
+In our example, the class is Person, which defines what a person object looks like.
 
-They are marked private, which means they are hidden from the outside world.
+Inside, we have two fields, name and age.
 
-These fields store the actual data inside the object.
+They’re marked private, meaning they are hidden from the outside world.
+
+These fields hold the actual data of the object.
+
+This is the idea of keeping data safe inside the class.
 
 ## 2. Constructors
-A constructor is a special method that runs when we create an object.
 
-Here, the constructor takes two parameters, name and age, and uses them to set the fields.
+A constructor is a special method that runs automatically when we create a new object.
 
-So when we write new Person("Alice", 30), the constructor is immediately called to initialize the object’s state.
+Here, the constructor takes two parameters — name and age — and uses them to initialize the fields.
+
+So when we write new Person("Alice", 30), the constructor is immediately called to set up the new object.
 
 ## 3. Properties (with Backing Fields)
 
-In C# 1.0, properties are written explicitly, using a private field in the background — called a backing field.
+In C# 1.0, properties had to be written explicitly, using private fields behind the scenes — called backing fields.
 
-For example, the Name property is connected to the name field.
+For example, the Name property:
 
-The get block returns the value of the field.
+The get block reads the private field.
 
-The set block updates the field.
+The set block updates the private field.
 
-This allows us to access data like p.Name instead of directly accessing the private field.
+This lets us write p.Name instead of touching the field directly.
 
-In modern C#, we have auto-properties which make this shorter, but in version 1.0, everything had to be written out.
+Today, C# has auto-properties, which make this shorter, but in version 1.0 everything had to be spelled out.
 
 ## 4. Encapsulation
 
-Encapsulation is one of the key ideas of object-oriented programming.
+Encapsulation means: hide the internal data, but provide controlled access through properties or methods.
 
-It means: hide the internal data, but provide safe access through properties or methods.
+By keeping name and age private and only exposing them through properties, we protect the internal state.
 
-By keeping name and age private and only exposing them through properties, we protect the object from misuse. For example, we could later add validation in the setter if needed, without changing how the class is used.
+For example, later we could add validation in the set block (like preventing negative ages) without changing how the class is used.
+
+This is one of the cornerstones of object-oriented programming (OOP).
 
 ## 5. Overriding ToString()
 
-Every object in C# has a ToString() method, but by default, it only prints the class name.
+Every object in C# has a ToString() method, but by default it just prints the class name.
 
-In our example, we override ToString() to return a meaningful description:
+By overriding it, we return a meaningful string, for example:
 
 Name = Alice, Age = 30.
 
-This makes our objects much easier to display and debug.
+This makes our objects easier to display, log, and debug.
 
 Putting It All Together
-In the Main() method, we create a new Person with name Alice and age 30.
 
-When we print it using Console.WriteLine(p), the runtime automatically calls our custom ToString() method and shows a nice formatted message.
+In Main(), we create a new Person with "Alice", 30.
 
-## Summary
+When we call Console.WriteLine(p), the runtime automatically uses our overridden ToString() method to print the formatted output.
 
-A class is a blueprint for objects.
+Output:
 
-Fields store the actual data, usually private.
+Name = Alice, Age = 30
 
-Constructors initialize new objects.
+## Summary of Key Concepts
 
-Properties give controlled access to fields.
+Class → Blueprint for objects.
 
-Encapsulation hides data but exposes safe access.
+Fields → Store the actual data (kept private).
 
-Overriding ToString() makes objects print meaningful information.
+Constructor → Initializes new objects.
 
-This is one of the most important foundations in C#. Everything else builds on these concepts
+Properties → Provide controlled access to fields.
+
+Encapsulation → Hides data, exposes safe access.
+
+ToString() override → Gives objects a meaningful string form.
+
+## Why It Matters
+
+These are the foundations of C# and OOP.
+
+Even though modern C# adds conveniences like auto-properties, records, and improved syntax, the underlying concepts remain the same.
+
+If you understand this example, you understand the core structure of every C# class you’ll write in the future.
 
 ---
 
