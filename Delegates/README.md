@@ -2,6 +2,54 @@
 
 This sample (from the repo **Csharp-Version1-Samples**) demonstrates **delegates, events, and the subscribe/unsubscribe pattern** in **C# 1.0**.
 
+Before diving into the details, let’s focus on the main concepts this example introduces: delegates, events, publishers, and subscribers.
+
+## 1. Delegates
+A delegate is like a contract for a method. It says: ‘any method that looks like this can be stored and called later.’
+In our example, NotifyHandler is a delegate. It specifies that any method that takes a string and returns nothing can be plugged in.
+
+Think of a delegate as a remote control: the button doesn’t know exactly what device is connected, it only knows ‘when I press this, something with this shape will respond.’
+
+## 2. Events
+An event is a special way of using a delegate that protects how it’s raised.
+It’s a message the Publisher can send out, and it’s a signal that something happened.
+
+The key point: events connect the publisher with subscribers without them needing to know about each other directly.
+
+## 3. Publisher Class
+The Publisher is the one that creates the event. It owns the event OnNotify.
+It doesn’t care who listens — it only raises the event whenever something important happens (in our case, after DoSomething).
+
+So the Publisher is like a news station: it just broadcasts messages.
+
+## 4. Subscriber Class
+The Subscriber is anyone who listens to the event.
+It provides a method that matches the delegate (HandleNotification).
+When it subscribes to the event, it’s saying: ‘Please call me whenever the news station broadcasts.’
+
+So the Subscriber is like a viewer at home: it decides to tune in or tune out.
+
+## 5. Subscription and Unsubscription
+In the Main() method we see both.
+
+Subscribing: pub.OnNotify += sub.HandleNotification; means connect my method to that event.
+
+Unsubscribing: pub.OnNotify -= sub.HandleNotification; means stop calling me when the event happens.
+
+This mechanism makes the system very flexible: publishers don’t need to know how many subscribers there are or what they do.
+
+## Summary
+
+Delegates define the shape of the callback.
+
+Events provide a safe way to raise and handle those callbacks.
+
+Publisher owns and raises the event.
+
+Subscriber listens and reacts to the event.
+
+This publisher–subscriber pattern is at the core of event-driven programming in C#. It allows us to build loosely coupled systems where components communicate without hard dependencies.”
+
 ---
 
 ## Example Code
