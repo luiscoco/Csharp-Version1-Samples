@@ -2,6 +2,79 @@
 
 This sample demonstrates **classes, fields, constructors, properties, encapsulation, and overriding `ToString()`** in **C# 1.0**.
 
+Now let’s look at another C# 1.0 example, this time focusing on classes, fields, constructors, properties, encapsulation, and overriding ToString().
+
+## 1. Classes and Fields
+A class is simply a blueprint for creating objects.
+
+In this case, our class is Person. It defines what a person object will look like.
+
+Inside the class, we have two fields: name and age.
+
+They are marked private, which means they are hidden from the outside world.
+
+These fields store the actual data inside the object.
+
+## 2. Constructors
+A constructor is a special method that runs when we create an object.
+
+Here, the constructor takes two parameters, name and age, and uses them to set the fields.
+
+So when we write new Person("Alice", 30), the constructor is immediately called to initialize the object’s state.
+
+## 3. Properties (with Backing Fields)
+
+In C# 1.0, properties are written explicitly, using a private field in the background — called a backing field.
+
+For example, the Name property is connected to the name field.
+
+The get block returns the value of the field.
+
+The set block updates the field.
+
+This allows us to access data like p.Name instead of directly accessing the private field.
+
+In modern C#, we have auto-properties which make this shorter, but in version 1.0, everything had to be written out.
+
+## 4. Encapsulation
+
+Encapsulation is one of the key ideas of object-oriented programming.
+
+It means: hide the internal data, but provide safe access through properties or methods.
+
+By keeping name and age private and only exposing them through properties, we protect the object from misuse. For example, we could later add validation in the setter if needed, without changing how the class is used.
+
+## 5. Overriding ToString()
+
+Every object in C# has a ToString() method, but by default, it only prints the class name.
+
+In our example, we override ToString() to return a meaningful description:
+
+Name = Alice, Age = 30.
+
+This makes our objects much easier to display and debug.
+
+Putting It All Together
+In the Main() method, we create a new Person with name Alice and age 30.
+
+When we print it using Console.WriteLine(p), the runtime automatically calls our custom ToString() method and shows a nice formatted message.
+
+## Summary
+
+A class is a blueprint for objects.
+
+Fields store the actual data, usually private.
+
+Constructors initialize new objects.
+
+Properties give controlled access to fields.
+
+Encapsulation hides data but exposes safe access.
+
+Overriding ToString() makes objects print meaningful information.
+
+This is one of the most important foundations in C#. Everything else builds on these concepts
+
 ---
 
 ## Example Structure
