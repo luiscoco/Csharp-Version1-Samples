@@ -1,6 +1,10 @@
-Access Modifiers in C#
+# Access Modifiers in C#
 
-Now let’s look at an example that demonstrates the different access modifiers in C#. Access modifiers control who can see and use a member of a class. They are the foundation of encapsulation and data protection.
+Now let’s look at an example that demonstrates the different access modifiers in C#. 
+
+Access modifiers control who can see and use a member of a class. 
+
+They are the foundation of encapsulation and data protection.
 
 ## 1. Public
 
