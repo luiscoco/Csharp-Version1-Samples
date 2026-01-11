@@ -1,4 +1,4 @@
-# C# 1.0 Mini-Sample Explanation
+# C# 1.0 "Hello World" Mini-Sample Explanation
 
 This example demonstrates some of the fundamental concepts of **C# 1.0**:
 
