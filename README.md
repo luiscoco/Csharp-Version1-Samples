@@ -22,7 +22,7 @@ No generics, lambdas/anonymous methods, LINQ, `var`, `yield`, nullable value typ
 
 ---
 
-## Project Map (P01–P16)
+## Project Map (P01-P16)
 
 | Project | Title | Key C# 1.0 Features Demonstrated |
 |---|---|---|
@@ -45,7 +45,7 @@ No generics, lambdas/anonymous methods, LINQ, `var`, `yield`, nullable value typ
 
 ---
 
-# C# 1.0 Mini-Programs - Guided README (P01–P16)
+# C# 1.0 Mini-Programs - Guided README (P01-P16)
 
 This repository demonstrates **C# 1.0 (2002)** features using 16 tiny console projects. It stays inside the C# 1.0 language surface (no generics, lambdas, LINQ, `var`, `yield`, etc.). The goal is to learn/teach the essentials with minimal scaffolding.
 
