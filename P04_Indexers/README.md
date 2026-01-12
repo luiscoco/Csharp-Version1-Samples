@@ -1,4 +1,4 @@
-# C# 1.0 - P04_Indexers Example Explanation
+# C# 1.0 - P04_Indexers
 
 This sample (from the repo **Csharp-Version1-Samples**) demonstrates **indexers, arrays, and ToString() composition** in **C# 1.0**.
 
