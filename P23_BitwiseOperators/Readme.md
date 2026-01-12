@@ -1,4 +1,4 @@
-# Bitwise Operators and [Flags] Enums
+# C# 1.0 - P23_BitwiseOperators
 
 Now let’s look at a C# example that demonstrates bitwise operators and the special use of enums with the [Flags] attribute.
 
