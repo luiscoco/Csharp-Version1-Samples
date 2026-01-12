@@ -1,4 +1,4 @@
-# Properties in C#
+# C# 1.0 - P16_Properties
 
 “Let’s look at a simple example that introduces properties in C#.
 
