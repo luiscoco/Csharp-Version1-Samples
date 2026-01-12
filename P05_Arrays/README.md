@@ -1,4 +1,4 @@
-# C# 1.0 - P06_Arrays Example Explanation
+# C# 1.0 - P05_Arrays Example Explanation
 
 This sample (from the repo **Csharp-Version1-Samples**) demonstrates **arrays, foreach loops, the params keyword, and simple joining** in **C# 1.0**.
 
