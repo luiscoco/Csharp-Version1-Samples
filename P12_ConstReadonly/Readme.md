@@ -1,4 +1,4 @@
-# Const vs Readonly in C#
+# C# 1.0 - P12_Const vs Readonly
 
 Now let’s look at an example that demonstrates the difference between const and readonly fields in C#.
 
