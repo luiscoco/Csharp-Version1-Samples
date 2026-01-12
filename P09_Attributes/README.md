@@ -1,4 +1,4 @@
-# C# 1.0 - P10_Attributes Example Explanation
+# C# 1.0 - P09_Attributes
 
 This sample (from the repo **Csharp-Version1-Samples**) demonstrates **custom attributes, AttributeUsage, and reflection** in **C# 1.0**.
 
