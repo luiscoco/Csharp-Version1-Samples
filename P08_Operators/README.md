@@ -1,4 +1,4 @@
-# C# 1.0 - P09_Operators Example Explanation
+# C# 1.0 - P08_Operators
 
 This sample (from the repo **Csharp-Version1-Samples**) demonstrates **operator overloading on a struct** and **formatting output with ToString()** in **C# 1.0**.
 
