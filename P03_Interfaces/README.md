@@ -1,4 +1,4 @@
-# C# 1.0 - P04_Interfaces
+# C# 1.0 - P03_Interfaces
 
 This sample demonstrates **interfaces, inheritance, virtual/override methods, and polymorphism via interface references** in **C# 1.0**.
 
