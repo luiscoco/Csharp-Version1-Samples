@@ -1,4 +1,4 @@
-# Enums in C#
+# P11_Enums
 
 Now let’s look at enums in C#. An enum, short for enumeration, is a way to give meaningful names to numeric constants.
 
