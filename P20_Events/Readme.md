@@ -1,4 +1,4 @@
-# Events and Delegates in C#
+# C# 1.0 - P20_Events_Delegates
 
 Now we’re going to look at an example that demonstrates how events work in C#. Events are the foundation for many interactive applications — they let one object notify another when something happens.
 
