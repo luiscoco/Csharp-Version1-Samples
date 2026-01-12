@@ -1,4 +1,4 @@
-# Equality, Hash Codes, and Collections
+# C# 1.0 - P21_Equality_HashCodes_Collections
 
 Now let’s look at an example that teaches us about object equality in C#. This is fundamental for understanding how objects behave in comparisons and in collections like HashSet or Dictionary.
 
