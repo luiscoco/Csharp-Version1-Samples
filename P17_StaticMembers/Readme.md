@@ -1,4 +1,4 @@
-# Static Members in C#
+# C# 1.0 - P_17 Static Members
 
 “Now let’s look at an example that demonstrates static classes, static fields, and static methods in C#.
 
