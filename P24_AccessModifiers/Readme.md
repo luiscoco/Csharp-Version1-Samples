@@ -1,4 +1,4 @@
-# Access Modifiers in C#
+# C# 1.0 - P24_AccessModifiers
 
 Now let’s look at an example that demonstrates the different access modifiers in C#. 
 
