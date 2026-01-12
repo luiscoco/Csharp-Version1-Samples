@@ -1,4 +1,4 @@
-# C# 1.0 - P02_ClassesAndStructs
+# C# 1.0 - P02_Classes and Structs
 
 This sample shows the core differences between classes and structs in C# 1.0 using simple fields and assignments.
 
