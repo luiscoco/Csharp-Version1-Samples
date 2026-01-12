@@ -1,4 +1,4 @@
-# C# 1.0 - P11_Namespaces Example Explanation
+# C# 1.0 - P10_Namespaces
 
 This sample (from the repo **Csharp-Version1-Samples**) demonstrates **namespaces, using directives, access modifiers, and static member patterns** in **C# 1.0**.
 
