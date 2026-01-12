@@ -1,4 +1,4 @@
-# C# 1.0 - P08_Exceptions Example Explanation
+# C# 1.0 - P08_Exceptions
 
 This sample (from the repo **Csharp-Version1-Samples**) demonstrates **exceptions, try/catch/finally, parsing with int.Parse, handling FormatException, and cleanup in finally** in **C# 1.0**.
 
