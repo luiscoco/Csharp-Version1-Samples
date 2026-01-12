@@ -1,4 +1,4 @@
-# C# 1.0 - P07_Delegates Example Explanation
+# C# 1.0 - P06_Delegates Example Explanation
 
 This sample (from the repo **Csharp-Version1-Samples**) demonstrates **delegates, events, and the subscribe/unsubscribe pattern** in **C# 1.0**.
 
