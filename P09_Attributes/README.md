@@ -177,7 +177,11 @@ public class MyCustomAttribute : Attribute
 }
 ```
 - Attributes must inherit from `System.Attribute`.
-- `AttributeUsage` restricts where the attribute can be applied (here: **classes** and **methods**).
+
+- `AttributeUsage` restricts where the attribute can be applied
+
+  (here: **classes** and **methods**).
+
 - This attribute has a property `Description` to hold metadata.
 
 ### 2. Applying the Attribute
