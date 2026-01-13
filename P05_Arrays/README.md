@@ -111,9 +111,13 @@ Arrays → fixed-size sequences of elements.
 
 foreach → clean, safe way to loop over an array.
 
-params → allows passing a variable number of arguments without explicitly creating an array.
+params → allows passing a variable number of arguments without 
 
-Joining → in C# 1.0, done manually with loops; later simplified with built-in methods.
+explicitly creating an array.
+
+Joining → in C# 1.0, done manually with loops; 
+
+later simplified with built-in methods.
 
 ## Why It Matters
 
@@ -121,7 +125,9 @@ Arrays were the foundation for all later collection types in C#.
 
 foreach made iteration safer and simpler than indexing.
 
-params improved method usability — you’ll see it in many built-in .NET methods.
+params improved method usability — you’ll see it in many 
+
+built-in .NET methods.
 
 Manual joining shows how developers used to solve aggregation tasks before LINQ and modern APIs.
 
