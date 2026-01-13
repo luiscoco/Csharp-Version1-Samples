@@ -92,6 +92,11 @@ Hello from MyCustomNamespace!
 ## Why it Matters
 
 - **Namespaces** keep code organized and prevent conflicts.
+
 - **Using directives** simplify code by avoiding fully-qualified names.
+
 - **Access modifiers** control visibility and encapsulation.
-- **Static member pattern** was the original way to group helper methods until `static class` was introduced in later C# versions.
+
+- **Static member pattern** was the original way to group helper methods
+
+until `static class` was introduced in later C# versions.
