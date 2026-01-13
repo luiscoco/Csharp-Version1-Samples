@@ -52,13 +52,17 @@ So the Subscriber is like a viewer at home: it decides to tune in or tune out.
 
 In the Main() method we see both.
 
-Subscribing: pub.OnNotify += sub.HandleNotification; means connect my method to that event.
+Subscribing: pub.OnNotify += sub.HandleNotification; means connect my method 
 
-Unsubscribing: pub.OnNotify -= sub.HandleNotification; means stop calling me when the event happens.
+to that event.
 
-This mechanism makes the system very flexible: publishers don’t need to know how many
+Unsubscribing: pub.OnNotify -= sub.HandleNotification; means stop calling me 
 
-subscribers there are or what they do.
+when the event happens.
+
+This mechanism makes the system very flexible: publishers don’t need to know
+
+how many subscribers there are or what they do.
 
 ## Summary
 
