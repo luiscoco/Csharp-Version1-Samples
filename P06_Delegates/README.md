@@ -286,4 +286,5 @@ Subscriber received: Event triggered!
 - Delegates and events are the **foundation of event-driven programming** in C#.
 - Enable the **publish–subscribe pattern** between objects.
 - Used heavily in GUIs, asynchronous programming, and .NET frameworks.
-- Modern C# introduces generics (`Action<>`, `Func<>`, `EventHandler<T>`), but the concepts remain the same.
+- Modern C# introduces generics (`Action<>`, `Func<>`, `EventHandler<T>`),
+  but the concepts remain the same.
