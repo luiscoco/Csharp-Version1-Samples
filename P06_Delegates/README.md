@@ -24,9 +24,9 @@ An event is a special way of using a delegate that protects how it’s raised.
 
 It’s a message the Publisher can send out, and it’s a signal that something happened.
 
-The key point: events connect the publisher with subscribers without them needing to know 
+The key point: events connect the publisher with subscribers without them needing 
 
-about each other directly.
+to know about each other directly.
 
 ## 3. Publisher Class
 The Publisher is the one that creates the event. It owns the event OnNotify.
@@ -39,12 +39,17 @@ So the Publisher is like a news station: it just broadcasts messages.
 
 ## 4. Subscriber Class
 The Subscriber is anyone who listens to the event.
+
 It provides a method that matches the delegate (HandleNotification).
-When it subscribes to the event, it’s saying: ‘Please call me whenever the news station broadcasts.’
+
+When it subscribes to the event, it’s saying: ‘Please call me whenever the news
+
+station broadcasts.’
 
 So the Subscriber is like a viewer at home: it decides to tune in or tune out.
 
 ## 5. Subscription and Unsubscription
+
 In the Main() method we see both.
 
 Subscribing: pub.OnNotify += sub.HandleNotification; means connect my method to that event.
