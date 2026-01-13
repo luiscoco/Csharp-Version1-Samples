@@ -19,6 +19,7 @@ Think of a delegate as a remote control: the button doesn’t know exactly what 
 
 ## 2. Events
 An event is a special way of using a delegate that protects how it’s raised.
+
 It’s a message the Publisher can send out, and it’s a signal that something happened.
 
 The key point: events connect the publisher with subscribers without them needing to know 
