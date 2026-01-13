@@ -13,9 +13,11 @@ In our example, NotifyHandler is a delegate.
 
 It specifies that any method that takes a string and returns nothing can be plugged in.
 
-Think of a delegate as a remote control: the button doesn’t know exactly what device is connected
+Think of a delegate as a remote control: the button doesn’t know exactly 
 
-, it only knows ‘when I press this, something with this shape will respond.’
+what device is connected, it only knows ‘when I press this, something with
+
+this shape will respond.’
 
 ## 2. Events
 An event is a special way of using a delegate that protects how it’s raised.
