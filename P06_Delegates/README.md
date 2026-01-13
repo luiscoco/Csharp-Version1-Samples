@@ -56,7 +56,9 @@ Subscribing: pub.OnNotify += sub.HandleNotification; means connect my method to 
 
 Unsubscribing: pub.OnNotify -= sub.HandleNotification; means stop calling me when the event happens.
 
-This mechanism makes the system very flexible: publishers don’t need to know how many subscribers there are or what they do.
+This mechanism makes the system very flexible: publishers don’t need to know how many
+
+subscribers there are or what they do.
 
 ## Summary
 
