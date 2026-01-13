@@ -129,7 +129,9 @@ params improved method usability — you’ll see it in many
 
 built-in .NET methods.
 
-Manual joining shows how developers used to solve aggregation tasks before LINQ and modern APIs.
+Manual joining shows how developers used to solve aggregation 
+
+tasks before LINQ and modern APIs.
 
 ---
 
