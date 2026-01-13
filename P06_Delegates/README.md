@@ -199,9 +199,12 @@ It’s what gets called when the event is raised.
 ### 5. Subscribe / Unsubscribe pattern
 
 ```
-pub.OnNotify += sub.HandleNotification;   // Subscribe
-pub.DoSomething();                         // Event raised -> subscriber called
-pub.OnNotify -= sub.HandleNotification;   // Unsubscribe
+// Subscribe
+pub.OnNotify += sub.HandleNotification;
+// Event raised -> subscriber called  
+pub.DoSomething();
+// Unsubscribe                      
+pub.OnNotify -= sub.HandleNotification;   
 ```
 
 += adds HandleNotification to the event’s invocation list.
@@ -212,9 +215,13 @@ It raises the event
 
 All subscribed methods (here just one) are invoked.
 
--= removes the subscription → the subscriber won’t be notified anymore.
+-= removes the subscription → the subscriber won’t be
 
-This prevents memory leaks or unexpected callbacks when a subscriber is no longer interested.
+notified anymore.
+
+This prevents memory leaks or unexpected callbacks 
+
+when a subscriber is no longer interested.
 
 
 ### 6. Big Picture (flow)
