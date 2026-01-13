@@ -5,20 +5,32 @@ This sample (from the repo **Csharp-Version1-Samples**) demonstrates **delegates
 Before diving into the details, let’s focus on the main concepts this example introduces: delegates, events, publishers, and subscribers.
 
 ## 1. Delegates
-A delegate is like a contract for a method. It says: ‘any method that looks like this can be stored and called later.’
-In our example, NotifyHandler is a delegate. It specifies that any method that takes a string and returns nothing can be plugged in.
+A delegate is like a contract for a method. 
 
-Think of a delegate as a remote control: the button doesn’t know exactly what device is connected, it only knows ‘when I press this, something with this shape will respond.’
+It says: ‘any method that looks like this can be stored and called later.’
+
+In our example, NotifyHandler is a delegate. 
+
+It specifies that any method that takes a string and returns nothing can be plugged in.
+
+Think of a delegate as a remote control: the button doesn’t know exactly what device is connected
+
+, it only knows ‘when I press this, something with this shape will respond.’
 
 ## 2. Events
 An event is a special way of using a delegate that protects how it’s raised.
 It’s a message the Publisher can send out, and it’s a signal that something happened.
 
-The key point: events connect the publisher with subscribers without them needing to know about each other directly.
+The key point: events connect the publisher with subscribers without them needing to know 
+
+about each other directly.
 
 ## 3. Publisher Class
 The Publisher is the one that creates the event. It owns the event OnNotify.
-It doesn’t care who listens — it only raises the event whenever something important happens (in our case, after DoSomething).
+
+It doesn’t care who listens — it only raises the event whenever something important
+
+happens (in our case, after DoSomething).
 
 So the Publisher is like a news station: it just broadcasts messages.
 
