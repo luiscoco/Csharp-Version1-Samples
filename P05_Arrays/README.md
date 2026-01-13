@@ -81,7 +81,7 @@ This feature is very practical, for example,
 
 Console.WriteLine itself uses params internally.
 
- ##4. Simple Joining (Pre–C# 2.0)
+## 4. Simple Joining (Pre–C# 2.0)
 
 In modern C#, we would just write:
 
