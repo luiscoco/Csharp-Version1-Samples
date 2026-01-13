@@ -74,7 +74,9 @@ Publisher owns and raises the event.
 
 Subscriber listens and reacts to the event.
 
-This publisher–subscriber pattern is at the core of event-driven programming in C#. It allows us to build loosely coupled systems where components communicate without hard dependencies.”
+This publisher–subscriber pattern is at the core of event-driven programming in C#.
+
+It allows us to build loosely coupled systems where components communicate without hard dependencies.”
 
 ---
 
