@@ -57,11 +57,13 @@ Console.WriteLine(c[0]); // "Hello"
 ## 2. Arrays Inside
 
 Typically, the indexer is backed by an array (or list).
+
 In C# 1.0, the natural choice was a fixed array.
 
 ## 3. ToString() Composition
 
 Often, the class overrides ToString() to produce a readable summary of its data.
+
 For example, concatenating all items in the array:
 
 ```
