@@ -20,7 +20,9 @@ public class MyCustomAttribute : Attribute
 
 Every custom attribute must inherit from System.Attribute.
 
-[AttributeUsage] tells the compiler where this attribute can be applied. In this case, we allow it on classes and methods.
+[AttributeUsage] tells the compiler where this attribute can be applied. 
+
+In this case, we allow it on classes and methods.
 
 Our attribute has a property Description that stores extra metadata.
 
@@ -39,11 +41,15 @@ class MyClass
 }
 ```
 
-Notice we write [MyCustom(...)] instead of [MyCustomAttribute(...)] — C# lets us drop the “Attribute” suffix when applying.
+Notice we write [MyCustom(...)] instead of [MyCustomAttribute(...)] 
+
+C# lets us drop the “Attribute” suffix when applying.
 
 We apply it both to the class and to a method.
 
-At this point, we’ve decorated our code with metadata. But how do we use it? That’s where reflection comes in.
+At this point, we’ve decorated our code with metadata. 
+
+But how do we use it? That’s where reflection comes in.
 
 ## 3. Reading Attributes with Reflection
 
@@ -58,7 +64,9 @@ typeof(MyClass) gives us the metadata about the class.
 
 GetCustomAttributes(false) returns an array of all attributes applied to it.
 
-We loop over the attributes, check if they’re of type MyCustomAttribute, and then print the Description property.
+We loop over the attributes, check if they’re of type MyCustomAttribute, 
+
+and then print the Description property.
 
 We do the same with the method:
 
@@ -87,7 +95,9 @@ Reflection: Use typeof, GetCustomAttributes, and MethodInfo to read attributes a
 
 ## Why It Matters
 
-Custom attributes let us add declarative metadata to our code. Reflection then allows frameworks or tools to read and act on that metadata.
+Custom attributes let us add declarative metadata to our code. 
+
+Reflection then allows frameworks or tools to read and act on that metadata.
 
 This idea is the foundation of many .NET frameworks you already use:
 
@@ -97,7 +107,9 @@ NUnit: [Test], [SetUp]
 
 Entity Framework: [Key], [Table]
 
-In other words, attributes are how .NET connects declarative programming (annotations) with runtime behavior.
+In other words, attributes are how .NET connects declarative programming 
+
+(annotations) with runtime behavior.
 
 ---
 
