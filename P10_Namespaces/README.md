@@ -99,4 +99,4 @@ Hello from MyCustomNamespace!
 
 - **Static member pattern** was the original way to group helper methods
 
-until `static class` was introduced in later C# versions.
+  until `static class` was introduced in later C# versions.
