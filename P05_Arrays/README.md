@@ -36,9 +36,13 @@ foreach (string c in colors)
     Console.WriteLine(c);
 ```
 
-The loop automatically steps through each element of the array — c takes on the values "red", "green", "blue".
+The loop automatically steps through each element of the array
 
-Key detail: the loop variable is read-only inside foreach. That means you can read values, but you can’t assign to c.
+c takes on the values "red", "green", "blue".
+
+Key detail: the loop variable is read-only inside foreach. 
+
+That means you can read values, but you can’t assign to c.
 
 Output:
 
@@ -60,6 +64,7 @@ static void PrintAll(params string[] items)
 ```
 
 The params keyword allows a method to accept a variable number of arguments.
+
 That means we can call it in two ways:
 
 ```csharp
@@ -72,7 +77,9 @@ The output is:
 one two three
 red green blue
 
-This feature is very practical — for example, Console.WriteLine itself uses params internally.
+This feature is very practical, for example, 
+
+Console.WriteLine itself uses params internally.
 
  ##4. Simple Joining (Pre–C# 2.0)
 
@@ -94,7 +101,9 @@ string JoinWithSpaces(string[] items)
 }
 ```
 
-This was the manual way of joining array content, and it laid the groundwork for later improvements like string.Join and eventually LINQ.
+This was the manual way of joining array content, 
+
+and it laid the groundwork for later improvements like string.Join and eventually LINQ.
 
 ## Summary of Key Concepts
 
