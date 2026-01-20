@@ -292,3 +292,62 @@ Subscriber received: Event triggered!
 - Modern C# introduces generics (`Action<>`, `Func<>`, `EventHandler<T>`),
   
   but the concepts remain the same.
+
+## Prompt
+
+```
+VS Code Codex – Code Generation Prompt
+
+Role: C# Language Fundamentals Tutor
+
+Task: Generate a minimal, educational C# console application that demonstrates how to declare and use a delegate.
+
+Requirements:
+
+Language Restriction C# version 1.0
+
+Use C# and target a console application
+
+Declare a delegate that takes a single string parameter and returns void
+
+Create a Program class with a Main method
+
+Define a static method that matches the delegate signature
+
+Instantiate the delegate using the method
+
+Invoke the delegate to print a message to the console
+
+Keep the code concise, beginner-friendly, and free of unnecessary comments or advanced constructs
+
+Expected Outcome:
+A single .cs file that clearly shows:
+
+Delegate declaration
+
+Method binding
+
+Delegate invocation
+
+Console output
+
+Do not include:
+
+Lambdas
+
+Events
+
+Generics
+
+Additional classes
+
+Async code
+
+Coding Style:
+
+Simple naming
+
+Clear structure
+
+Idiomatic C#
+```
