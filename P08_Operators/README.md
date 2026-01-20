@@ -90,3 +90,32 @@ public override string ToString()
 - Operator overloading makes **custom types** more natural to use.
 - Enables expressions like `p1 + p2` instead of `Add(p1, p2)`.
 - `ToString()` improves readability and debugging output.
+
+## Prompt
+
+```
+Generate a complete C# console application that demonstrates operator overloading
+using a value type.
+
+Requirements:
+- Language Restriction version 1.0.
+- Use C#.
+- Define a struct named Point with two public integer fields: X and Y.
+- Provide a constructor that initializes both fields.
+- Overload the + operator so two Point instances can be added together,
+  returning a new Point with summed coordinates.
+- Override ToString() to return the point formatted as "(X, Y)".
+
+Program behavior:
+- In Main(), create two Point instances with values (2, 3) and (4, 5).
+- Use the overloaded + operator to add them.
+- Write all three points to the console using Console.WriteLine,
+  relying on the overridden ToString() method.
+
+Constraints:
+- Keep the example minimal and idiomatic.
+- Do not use external libraries.
+- Put everything in a single file suitable for teaching operator overloading.
+
+The final output should compile and run as a standard C# console program.
+```
