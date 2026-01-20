@@ -126,3 +126,66 @@ if (status == Status.Approved) ...
 ```
 
 which is much clearer and safer.
+
+## Prompt 
+
+```
+You are generating a simple C# console application that demonstrates how enums work in C#.
+
+Project constraints:
+- Language Restriction C# version 1.0.
+- Use classic C# syntax (no top-level statements).
+- Everything must be contained in a single Program.cs file.
+- The code should be beginner-friendly and heavily illustrative.
+- Do not introduce additional abstractions or helper methods.
+
+Generate the following code structure:
+
+1. Import the System namespace.
+
+2. Declare a public enum named DaysOfWeek:
+   - Use the default underlying type (int).
+   - Define the members in this order:
+     Sunday = 0
+     Monday = 1
+     Tuesday = 2
+     Wednesday = 3
+     Thursday = 4
+     Friday = 5
+     Saturday = 6
+   - Add inline comments showing the numeric values.
+
+3. Declare a second public enum named Status:
+   - Explicitly specify the underlying type as byte.
+   - Define the members with explicit values:
+     Pending = 1
+     Approved = 2
+     Rejected = 3
+   - Add a comment explaining the underlying type choice.
+
+4. Define a Program class with a static void Main() method.
+
+Inside Main(), demonstrate the following enum operations with Console.WriteLine output:
+
+- Assign an enum value (DaysOfWeek.Wednesday) to a variable and print:
+  - The enum value
+  - Its underlying integer value using a cast
+
+- Cast an int value (1) to DaysOfWeek and print the result.
+
+- Assign a Status enum value (Approved) and print:
+  - The enum value
+  - Its underlying byte value using a cast
+
+- Convert the Status enum to a string using ToString() and print it.
+
+- Parse a string ("Pending") into a Status enum using Enum.Parse and print the result.
+
+Important rules:
+- Use explicit casts where appropriate.
+- Keep comments concise and educational.
+- Produce only valid C# code.
+- Do not add explanations outside the code.
+
+The final result should be a single, complete Program.cs file ready to run.
+```
