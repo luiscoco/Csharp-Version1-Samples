@@ -90,3 +90,25 @@ Finally block: cleanup code runs here.
 - `try/catch/finally` provides a safe structure for handling errors.
 - `int.Parse` demonstrates how exceptions can arise from invalid input.
 - `finally` ensures that important cleanup code always runs.
+
+## Prompt
+
+```
+Create a minimal C# console application (.NET) that demonstrates structured exception handling using try, catch, and finally.
+
+Requirements:
+- Language Restriction C# version 1.0
+- Use `System` namespace
+- Define a `Program` class with a `Main` method
+- Prompt the user with: "Enter a number: "
+- Read input from the console as a string
+- Inside a `try` block:
+  - Convert the string input to an integer using `int.Parse`
+  - Print the parsed integer using: "You entered: {number}"
+- Add a `catch` block that handles `FormatException`
+  - Display the message: "Error: Invalid number format."
+- Add a `finally` block that always executes
+  - Display the message: "Finally block: cleanup code runs here."
+
+Output the full, complete C# source file only. Do not add explanations or comments outside the code.
+```
