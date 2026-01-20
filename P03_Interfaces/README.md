@@ -122,3 +122,38 @@ Area = 12
 - **Inheritance** allows reuse and extension of base functionality.
 - **Virtual/Override** enable runtime polymorphism (dynamic method dispatch).
 - **Polymorphism** makes code more flexible and extensible.
+
+## Prompt
+
+```
+VS Code Codex - Code Generation Prompt
+
+Role: C# Language Fundamentals Instructor
+
+Task:
+Generate a minimal, self-contained C# console application that demonstrates interface-based polymorphism.
+
+Requirements:
+
+Define an interface named IShape with a single method Draw().
+
+Create a concrete class Circle that implements IShape.
+
+Implement the Draw() method so it writes a message to the console indicating that a circle is being drawn.
+
+Create a Program class with a Main method.
+
+Inside Main, declare a variable of type IShape, assign it an instance of Circle, and invoke Draw() through the interface reference.
+
+Use only standard .NET namespaces (no external libraries).
+
+Keep the example simple, readable, and suitable for beginners learning polymorphism and interfaces.
+
+Target a modern C# version, but avoid advanced language features—focus on fundamentals.
+
+Output format:
+
+Provide the complete C# source code in a single file.
+
+Do not include explanations or comments—only the code.
+```
