@@ -165,3 +165,32 @@ Monday Tue Wed Thu Fri Sat Sun
 - Indexers make objects more **intuitive to use**, like arrays or lists.
 - They are widely used in .NET collections (`List<T>`, `Dictionary<K,V>`, etc.).
 - `ToString()` provides a simple way to visualize object contents.
+
+
+## Prompt
+
+```
+Generate a C# console application that demonstrates the use of an indexer.
+
+Requirements:
+- Create a public class named WeekDays.
+- Internally store the names of the days of the week in a private string array initialized with:
+  "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun".
+- Expose an indexer that allows reading and writing a day by its integer index.
+- Override ToString() to return all days as a single space-separated string.
+- Include a Program class with a Main method that:
+  - Creates an instance of WeekDays
+  - Prints the first day using the indexer
+  - Modifies the first day via the indexer
+  - Prints the whole WeekDays object using ToString()
+
+Constraints:
+- Use idiomatic C#.
+- Language Restriction C# 1.0.
+- Do not use StringBuilder.
+- Keep the example simple and readable.
+- Do not use LINQ for ToString; use a loop instead.
+- Output should match:
+  Mon
+  Monday Tue Wed Thu Fri Sat Sun
+```
