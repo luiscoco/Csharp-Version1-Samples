@@ -100,3 +100,38 @@ Hello from MyCustomNamespace!
 - **Static member pattern** was the original way to group helper methods
 
   until `static class` was introduced in later C# versions.
+
+## Prompt
+
+```
+You are generating a simple educational C# console application that demonstrates how namespaces work across multiple files.
+
+Project requirements:
+
+1. The project uses standard C# (no top-level statements).
+2. The code must be split into two files: MyNamespace.cs and Program.cs.
+3. The namespace must be custom and explicitly imported using a `using` directive.
+
+Generate the following files exactly:
+
+--- File: MyNamespace.cs ---
+- Declare a namespace called `MyCustomNamespace`.
+- Inside the namespace, define a public class named `MyClassInNamespace`.
+- The class must contain a public method `GetMessage()` that returns the string:
+  "Hello from MyCustomNamespace!"
+
+--- File: Program.cs ---
+- Import the `System` namespace.
+- Import `MyCustomNamespace` using a `using` directive.
+- Define a `Program` class with a `static void Main()` method.
+- Inside `Main`, create an instance of `MyClassInNamespace`.
+- Call `GetMessage()` and write the result to the console using `Console.WriteLine`.
+
+Important:
+- Language restriction C# version 1.0.
+- Do not merge files.
+- Do not use top-level statements.
+- Keep the example simple and readable, suitable for beginners learning namespaces.
+
+Produce only valid C# code for both files.
+```
