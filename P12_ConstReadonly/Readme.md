@@ -94,3 +94,53 @@ Both protect against modification after initialization, but readonly is more fle
 Use const for universal, unchanging values (like PI, DaysInWeek, MaxByteValue).
 
 Use readonly for values that should not change after construction but may differ between objects (like configuration limits, IDs, or instance-specific settings).
+
+## Prompt
+
+```
+You are generating a simple C# console application that explains the difference between `const` and `readonly` fields.
+
+Project constraints:
+- Language Restriction C# version 1.0.
+- Use classic C# syntax (no top-level statements).
+- Place everything in a single Program.cs file.
+- The code should be educational and suitable for beginners.
+- Do not introduce additional helper classes or methods beyond what is required.
+
+Generate the following structure:
+
+1. Import the System namespace.
+
+2. Declare a public class named MyConstants.
+
+   Inside MyConstants:
+   - Declare a public `const double` named PI with the value 3.14159.
+     Add a comment explaining that `const` values are compile-time constants.
+
+   - Declare a public `readonly int` field named MaxValue.
+     Add a comment explaining that `readonly` fields are runtime constants.
+
+   - Implement a public constructor that takes an int parameter named maxValue
+     and assigns it to MaxValue.
+     Add a comment explaining that assignment is allowed only in the constructor.
+
+3. Declare a Program class with a static void Main() method.
+
+Inside Main():
+- Print the value of PI using the class name.
+- Create two different instances of MyConstants with different MaxValue values
+  (for example 100 and 200).
+- Print MaxValue for each instance to show that readonly fields can vary per object.
+
+- Include commented-out code lines showing:
+  - An invalid attempt to reassign PI
+  - An invalid attempt to reassign MaxValue after construction
+  Each commented line must include an explanatory comment about the compile-time error.
+
+Rules:
+- Keep comments short and educational.
+- Do not include explanations outside the code.
+- Produce only valid C# code ready to compile and run.
+
+The result should be a single, complete Program.cs file.
+```
