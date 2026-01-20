@@ -242,3 +242,25 @@ red green blue
 - `foreach` makes iteration simpler and safer than manual indexing.
 - `params` improves usability of methods (e.g., `Console.WriteLine` uses it).
 - Joining array content demonstrates aggregation logic, precursor to LINQ.
+
+## Prompt
+
+```
+Generate a minimal C# console application that demonstrates how to declare, initialize, and iterate over an integer array.
+
+Requirements:
+- Language restriction C# version 1.0.
+- Use the System namespace.
+- Define a Program class with a Main method.
+- Declare an integer array named numbers with a fixed size of 5 and initialize it with:
+  1, 2, 3, 4, 5.
+- Print a header line: "Elements in the array:".
+- Use a classic for loop (not foreach) to iterate over the array using its Length property.
+- Print each element on its own line using Console.WriteLine.
+
+Constraints:
+- Keep the code simple and beginner-friendly.
+- Do not use LINQ.
+- Do not use advanced language features.
+- Output should clearly list each array element on a separate line.
+```
