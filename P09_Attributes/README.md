@@ -227,3 +227,39 @@ This is a custom attribute on a method.
   - ASP.NET (`[HttpGet]`, `[Authorize]`)
   - NUnit (`[Test]`)
   - Entity Framework (`[Key]`, `[Table]`)
+
+## Prompt
+
+```
+Generate a complete C# console application that demonstrates
+how to define and consume custom attributes using reflection.
+
+Requirements:
+- Language Restriction C# version 1.0.
+- Use C#.
+- Define a custom attribute class named MyCustomAttribute.
+- Decorate the attribute with AttributeUsage so it can be applied
+  to both classes and methods.
+- The attribute must expose a public string property named Description.
+
+Demonstration code:
+- Create a class named MyClass.
+- Apply MyCustomAttribute to the class, setting the Description property.
+- Inside MyClass, define a public method named MyMethod.
+- Apply MyCustomAttribute to the method as well, with a different Description.
+
+Reflection logic:
+- In Main(), use reflection to:
+  - Retrieve custom attributes applied to MyClass.
+  - Detect instances of MyCustomAttribute.
+  - Print the Description property to the console.
+- Then retrieve the MethodInfo for MyMethod.
+- Read its custom attributes in the same way and print their Description values.
+
+Constraints:
+- Use only System and System.Reflection.
+- Use classic reflection APIs (GetCustomAttributes, typeof, GetMethod).
+- Keep the example minimal and educational.
+- Place all code in a single file suitable for learning purposes.
+- The final program must compile and run as a standard C# console application.
+```
